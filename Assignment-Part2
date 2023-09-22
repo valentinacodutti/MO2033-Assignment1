@@ -1,0 +1,41 @@
+using System;
+
+namespace MO2033_Assignment1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] fruits = { "apple", "banana", "cherry", "date", "elderberry" };
+
+            Console.WriteLine("List of fruits:");
+            for (int i = 0; i < fruits.Length; i++)
+            {
+                Console.WriteLine($"{i + 1}. {fruits[i]}");
+            }
+
+            // Let's do something interesting: ask the user for their favorite fruit and inform if it's on the list
+            Console.WriteLine("\nWhich of the above fruits is your favorite?");
+            string userFruit = Console.ReadLine().ToLower();
+
+            bool isFruitFound = false;
+            for (int i = 0; i < fruits.Length; i++)
+            {
+                if (fruits[i] == userFruit)
+                {
+                    isFruitFound = true;
+                    break;
+                }
+            }
+
+            if (isFruitFound)
+            {
+                Console.WriteLine($"Great choice! {userFruit} is on the list.");
+            }
+            else
+            {
+                Console.WriteLine($"Sorry, {userFruit} is not on our list. You have a unique taste!");
+            }
+        }
+    }
+}
